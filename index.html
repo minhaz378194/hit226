@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothing Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Online Clothing Store</h1>
+    </header>
+    
+    <section id="products">
+        <h2>Available Clothes</h2>
+        <div id="product-list"></div>
+    </section>
+
+    <section id="add-product">
+        <h2>Add New Clothing Item</h2>
+        <form id="product-form">
+            <label for="name">Product Name:</label>
+            <input type="text" id="name" required>
+            
+            <label for="price">Price ($):</label>
+            <input type="number" id="price" required>
+            
+            <label for="image">Image URL:</label>
+            <input type="text" id="image" required>
+            
+            <button type="submit">Add Product</button>
+        </form>
+    </section>
+
+    <section id="advertisement">
+        <h2>Advertisement</h2>
+        <p>Check out the latest fashion trends and exclusive deals!</p>
+        <img src="ad-placeholder.jpg" alt="Advertisement" width="300">
+    </section>
+
+    <section id="subscription">
+        <h2>Subscribe for Updates</h2>
+        <form id="subscription-form">
+            <label for="email">Enter your email:</label>
+            <input type="email" id="email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
