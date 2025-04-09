@@ -1,49 +1,49 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
+    background-color: #f9f9f9;
+    text-align: center;
+    padding: 40px;
+  }
+  
+  .card {
+    background-color: #fff;
+    width: 250px;
+    margin: auto;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    overflow: hidden;
+  }
+  
+  .card-img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .card-body {
     padding: 20px;
-    text-align: center;
-}
-
-header {
-    background-color: #333;
-    color: white;
-    padding: 10px;
-}
-
-section {
-    margin: 20px 0;
-}
-
-#product-list {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.product {
-    border: 1px solid #ddd;
-    padding: 10px;
-    width: 200px;
-    text-align: center;
-}
-
-button {
-    margin-top: 10px;
-    padding: 10px;
-    background-color: green;
+  }
+  
+  .card-title {
+    font-size: 1.2em;
+    margin: 0;
+  }
+  
+  .card-price {
+    color: #555;
+    margin: 10px 0;
+  }
+  
+  button {
+    padding: 10px 16px;
+    background-color: #28a745;
     color: white;
     border: none;
+    border-radius: 6px;
     cursor: pointer;
-}
-
-#ad-container {
-    margin: 20px;
-    padding: 20px;
-    background: #f4f4f4;
-}
-
-#subscription-form {
-    margin-top: 20px;
-}
+  }
+  
+  button:hover {
+    background-color: #218838;
+  }
+  
