@@ -1,0 +1,15 @@
+Task,Description,Priority,Status,Assigned To,Due Date,Dependencies
+Project Setup,Initialize repository and basic file structure,High,Completed,Team,Week 1,None
+Requirements Gathering,Define user personas and hypotheses,High,Completed,Team,Week 1,Project Setup
+UI Design,Create wireframes and mockups,High,Completed,Team,Week 2,Requirements Gathering
+HTML Structure,Develop basic HTML structure,High,Completed,Team,Week 2,UI Design
+CSS Styling,Implement responsive design and styling,High,Completed,Team,Week 3,HTML Structure
+JavaScript Functionality,Implement core functionality,High,Completed,Team,Week 3,CSS Styling
+Food Database,Create and populate food database,Medium,Completed,Team,Week 4,JavaScript Functionality
+Data Visualization,Implement charts and progress tracking,High,Completed,Team,Week 4,JavaScript Functionality
+Accessibility Implementation,Ensure WCAG compliance,High,Completed,Team,Week 5,HTML Structure
+Testing,Conduct user testing with personas,High,In Progress,Team,Week 6,Accessibility Implementation
+Bug Fixing,Address issues found during testing,Medium,In Progress,Team,Week 6,Testing
+Documentation,Create project brief and documentation,Medium,In Progress,Team,Week 7,Bug Fixing
+Final Presentation,Prepare and deliver project presentation,High,Not Started,Team,Week 7,Documentation
+Future Enhancements,Plan for additional features,Low,Not Started,Team,Week 8,Final Presentation 

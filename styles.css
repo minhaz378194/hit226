@@ -1,0 +1,257 @@
+/* CSS Custom Properties for theming */
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #2196F3;
+    --background-color: #f5f5f5;
+    --text-color: #333;
+    --error-color: #ff4444;
+    --border-radius: 8px;
+    --spacing-unit: 20px;
+    --transition-speed: 0.3s;
+}
+
+/* Reset and Base Styles */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Accessibility */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* Focus styles for accessibility */
+:focus {
+    outline: 3px solid var(--secondary-color);
+    outline-offset: 2px;
+}
+
+/* Base styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    min-height: 100vh;
+}
+
+/* Layout */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-unit);
+}
+
+/* Component Styles */
+[role="banner"],
+[role="main"] > section {
+    background-color: white;
+    padding: var(--spacing-unit);
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: var(--spacing-unit);
+}
+
+/* Typography */
+h1, h2 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-unit);
+}
+
+/* Forms */
+.goal-section,
+.meal-form {
+    display: flex;
+    gap: var(--spacing-unit);
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Form Controls */
+input[type="number"],
+input[type="text"] {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    min-width: 120px;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color var(--transition-speed);
+}
+
+button:hover,
+button:focus {
+    background-color: #45a049;
+}
+
+/* Progress Bar */
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background-color: #eee;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: var(--primary-color);
+    width: 0%;
+    transition: width var(--transition-speed) ease;
+}
+
+/* Food Search */
+.input-group {
+    position: relative;
+    flex: 1;
+}
+
+.suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    max-height: 200px;
+    overflow-y: auto;
+    display: none;
+    z-index: 1000;
+}
+
+.suggestions [role="option"] {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.suggestions [role="option"]:hover,
+.suggestions [role="option"]:focus {
+    background-color: #f0f0f0;
+}
+
+/* Meal List */
+.meal-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.meal-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: var(--border-radius);
+}
+
+.meal-item button {
+    background-color: var(--error-color);
+    padding: 4px 8px;
+}
+
+.meal-item button:hover,
+.meal-item button:focus {
+    background-color: #cc0000;
+}
+
+/* Footer */
+[role="contentinfo"] {
+    margin-top: auto;
+    padding: var(--spacing-unit) 0;
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    gap: var(--spacing-unit);
+    justify-content: center;
+}
+
+.footer-links a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.footer-links a:hover,
+.footer-links a:focus {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    :root {
+        --spacing-unit: 10px;
+    }
+
+    .container {
+        padding: var(--spacing-unit);
+    }
+
+    .goal-section,
+    .meal-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .input-group {
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    /* Ensure touch targets are large enough */
+    button,
+    input[type="number"],
+    input[type="text"] {
+        min-height: 44px;
+    }
+}
+
+/* Add these styles after your existing CSS */
+
+/* Chart Container */
+.chart-container {
+    position: relative;
+    height: 300px;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.graph-section {
+    background-color: white;
+    padding: var(--spacing-unit);
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: var(--spacing-unit);
+}
+
+/* Ensure canvas doesn't overflow */
+#progressChart {
+    max-width: 100%;
+    height: 100% !important;
+    width: 100% !important;
+} 
