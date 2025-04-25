@@ -1,22 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Clothing Card MVP</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calorie tracking application for monitoring daily food intake">
+    <title>CalorieTracker</title>
+    <!-- Critical CSS -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+    </style>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  <h1>Clothing Card Template</h1>
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1520975698519-59f98d2d45a2?auto=format&fit=crop&w=300&q=80" alt="Graphic Tee" class="card-img" />
-    <div class="card-body">
-      <h2 class="card-title">Graphic Tee</h2>
-      <p class="card-price">$29.99</p>
-      <button onclick="buyNow()">Buy Now</button>
-    </div>
-  </div>
+    <div class="container" role="application">
+        <header role="banner">
+            <h1>CalorieTracker</h1>
+            <form class="goal-section" role="form" aria-label="Set daily calorie goal">
+                <label for="calorieGoal">Daily Calorie Goal:</label>
+                <input type="number" id="calorieGoal" min="0" step="50" value="2000" aria-label="Enter daily calorie goal">
+                <button type="button" onclick="updateGoal()" aria-label="Set calorie goal">Set Goal</button>
+            </form>
+        </header>
 
-  <script src="script.js"></script>
+        <main role="main">
+            <section class="progress-section" aria-labelledby="progress-heading">
+                <h2 id="progress-heading">Today's Progress</h2>
+                <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                    <div id="progress" class="progress-fill"></div>
+                </div>
+                <p>Calories: <span id="currentCalories" aria-label="Current calories">0</span> / <span id="goalCalories" aria-label="Goal calories">2000</span></p>
+            </section>
+
+            <section class="log-meal-section" aria-labelledby="log-meal-heading">
+                <h2 id="log-meal-heading">Log a Meal</h2>
+                <form class="meal-form" role="form" aria-label="Log meal form">
+                    <div class="input-group">
+                        <input type="text" id="foodSearch" placeholder="Search food or enter custom" aria-label="Search for food">
+                        <div id="foodSuggestions" class="suggestions" role="listbox" aria-label="Food suggestions"></div>
+                    </div>
+                    <input type="number" id="calories" placeholder="Calories" min="0" aria-label="Enter calories">
+                    <button type="button" onclick="logMeal()" aria-label="Add meal">Add Meal</button>
+                </form>
+            </section>
+
+            <section class="history-section" aria-labelledby="history-heading">
+                <h2 id="history-heading">Today's Meals</h2>
+                <div id="mealList" class="meal-list" role="list" aria-label="List of today's meals"></div>
+            </section>
+
+            <section class="graph-section" aria-labelledby="graph-heading">
+                <h2 id="graph-heading">7-Day Progress</h2>
+                <div class="chart-container">
+                    <canvas id="progressChart" role="img" aria-label="Bar chart showing calorie intake over 7 days"></canvas>
+                </div>
+            </section>
+        </main>
+
+        <footer role="contentinfo">
+            <nav aria-label="Quick links">
+                <ul class="footer-links">
+                    <li><a href="#" aria-label="View nutrition guide">Nutrition Guide</a></li>
+                    <li><a href="#" aria-label="View calorie calculator">Calorie Calculator</a></li>
+                </ul>
+            </nav>
+        </footer>
+    </div>
+
+    <script src="data/foods.js"></script>
+    <script src="script.js"></script>
 </body>
-</html>
+</html> 
